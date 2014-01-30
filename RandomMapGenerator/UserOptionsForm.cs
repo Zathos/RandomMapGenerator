@@ -1,39 +1,24 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using RandomMapGenerator.Constants;
 
 namespace RandomMapGenerator
 {
-
-
     public partial class UserOptionsForm : Form
     {
         public UserOptionsForm()
         {
-            InitializeComponent();           
-            OutputTypePicker.DataSource = Enum.GetValues(typeof(OutputType));
+            InitializeComponent();
+            OutputTypePicker.DataSource = Enum.GetValues(typeof (OutputType));
         }
 
-        private void GoButton_Click(object sender, EventArgs e)
+        private void ClearErrors()
         {
-            var inputvalues = GetInputValues();
-            if (inputvalues != null)
-            {
-                var message = inputvalues.ToString();
-                var results = MessageBox.Show(message, "Confirm", MessageBoxButtons.OKCancel);
-                if (results == DialogResult.OK)
-                {
-                    //TODO Do it!
-                    MessageBox.Show("Doing it, is the plan");
-                }
-            }
+            ErrorOutputType.Visible = false;
+            ErrorOutputPath.Visible = false;
+            ErrorXAxis.Visible = false;
+            ErrorYAxis.Visible = false;
+            ErrorZAxis.Visible = false;
         }
 
         private InputValues GetInputValues()
@@ -42,8 +27,7 @@ namespace RandomMapGenerator
             ClearErrors();
 
             OutputType outputType;
-            var mapTypeParsed = Enum.TryParse<OutputType>(OutputTypePicker.SelectedValue.ToString(), out outputType);
-            if (mapTypeParsed == false)
+            if (Enum.TryParse(OutputTypePicker.SelectedValue.ToString(), out outputType) == false)
             {
                 ErrorOutputType.Visible = true;
                 inputsValidate = false;
@@ -78,25 +62,16 @@ namespace RandomMapGenerator
             if (inputsValidate)
             {
                 inputValues = new InputValues
-                {
-                    MapType = outputType,
-                    OutputPath = OutputPath.Text,
-                    XSize = int.Parse(XAxisTextBox.Text),
-                    YSize = int.Parse(YAxisTextBox.Text),
-                    ZSize = int.Parse(ZAxisTextBox.Text),
-                };
+                                  {
+                                      MapType = outputType,
+                                      OutputPath = OutputPath.Text,
+                                      XSize = int.Parse(XAxisTextBox.Text),
+                                      YSize = int.Parse(YAxisTextBox.Text),
+                                      ZSize = int.Parse(ZAxisTextBox.Text),
+                                  };
             }
 
             return inputValues;
-        }
-
-        private void ClearErrors()
-        {
-            ErrorOutputType.Visible = false;
-            ErrorOutputPath.Visible = false;
-            ErrorXAxis.Visible = false;
-            ErrorYAxis.Visible = false;
-            ErrorZAxis.Visible = false;
         }
 
         private void BrowseButton_Click(object sender, EventArgs e)
@@ -104,6 +79,21 @@ namespace RandomMapGenerator
             if (FolderPicker.ShowDialog() == DialogResult.OK)
             {
                 OutputPath.Text = FolderPicker.SelectedPath;
+            }
+        }
+
+        private void GoButton_Click(object sender, EventArgs e)
+        {
+            var inputvalues = GetInputValues();
+            if (inputvalues != null)
+            {
+                var message = inputvalues.ToString();
+                var results = MessageBox.Show(message, "Confirm", MessageBoxButtons.OKCancel);
+                if (results == DialogResult.OK)
+                {
+                    //TODO Do it!
+                    MessageBox.Show("Doing it, is the plan");
+                }
             }
         }
     }
