@@ -3,7 +3,7 @@ using System.Windows.Forms;
 
 namespace RandomMapGenerator
 {
-    internal static class MainEntryPoint
+    internal static class ProcessModel
     {
         /// <summary>
         /// The main entry point for the application.
