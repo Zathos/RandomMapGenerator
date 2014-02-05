@@ -1,15 +1,24 @@
 ﻿using System;
 using System.Windows.Forms;
 using RandomMapGenerator.Constants;
+using System.IO;
 
 namespace RandomMapGenerator
 {
     public partial class UserOptionsForm : Form
     {
-        public UserOptionsForm()
+        private const string DefaultOutputPath = "C:\\DevOutut\\RandomMapGenerator";
+
+        private ProcessModel _processModel;
+
+        public UserOptionsForm(ProcessModel processModel)
         {
+            _processModel = processModel;
+
             InitializeComponent();
+
             OutputTypePicker.DataSource = Enum.GetValues(typeof (OutputType));
+            OutputPath.Text = DefaultOutputPath;
         }
 
         private void ClearErrors()
@@ -92,7 +101,8 @@ namespace RandomMapGenerator
                 if (results == DialogResult.OK)
                 {
                     //TODO Do it!
-                    MessageBox.Show("Doing it, is the plan");
+                    Directory.CreateDirectory(OutputPath.Text);
+                    _processModel.GenerateOutputFromUserInput(inputvalues);
                 }
             }
         }

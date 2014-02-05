@@ -7,11 +7,18 @@ using RandomMapGenerator.Constants;
 
 namespace RandomMapGenerator.Tiles
 {
-    public class WidePathBase
+    public class WidePathTile
     {
-        public char DisplayChar { get; }
-        public string Description { get;  }
-        public int TileValue { get; }
-        public abstract IList<Sides> ValidSides { get; }
+        public WidePathTile(char displayChar, int tileValue, IList<Side> validSides)
+        {
+            DisplayChar = displayChar;
+            TileValue = tileValue;
+            ValidSides = validSides;
+        }
+
+        public char DisplayChar { get; private set; }
+        //public string Description { get; private set; }
+        public int TileValue { get; private set; }
+        public IList<Side> ValidSides { get; private set; }
     }
 }

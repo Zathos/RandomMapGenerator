@@ -100,7 +100,7 @@
             this.GoButton.Location = new System.Drawing.Point(274, 126);
             this.GoButton.Name = "GoButton";
             this.GoButton.Size = new System.Drawing.Size(75, 23);
-            this.GoButton.TabIndex = 5;
+            this.GoButton.TabIndex = 7;
             this.GoButton.Text = "Generate";
             this.GoButton.UseVisualStyleBackColor = true;
             this.GoButton.Click += new System.EventHandler(this.GoButton_Click);
@@ -110,7 +110,7 @@
             this.OutputPath.Location = new System.Drawing.Point(94, 45);
             this.OutputPath.Name = "OutputPath";
             this.OutputPath.Size = new System.Drawing.Size(178, 20);
-            this.OutputPath.TabIndex = 6;
+            this.OutputPath.TabIndex = 2;
             // 
             // OutputTypePicker
             // 
@@ -118,28 +118,28 @@
             this.OutputTypePicker.Location = new System.Drawing.Point(95, 12);
             this.OutputTypePicker.Name = "OutputTypePicker";
             this.OutputTypePicker.Size = new System.Drawing.Size(121, 21);
-            this.OutputTypePicker.TabIndex = 7;
+            this.OutputTypePicker.TabIndex = 1;
             // 
             // ZAxisTextBox
             // 
             this.ZAxisTextBox.Location = new System.Drawing.Point(94, 133);
             this.ZAxisTextBox.Name = "ZAxisTextBox";
             this.ZAxisTextBox.Size = new System.Drawing.Size(50, 20);
-            this.ZAxisTextBox.TabIndex = 8;
+            this.ZAxisTextBox.TabIndex = 6;
             // 
             // YAxisTextBox
             // 
             this.YAxisTextBox.Location = new System.Drawing.Point(95, 102);
             this.YAxisTextBox.Name = "YAxisTextBox";
             this.YAxisTextBox.Size = new System.Drawing.Size(50, 20);
-            this.YAxisTextBox.TabIndex = 9;
+            this.YAxisTextBox.TabIndex = 5;
             // 
             // XAxisTextBox
             // 
             this.XAxisTextBox.Location = new System.Drawing.Point(95, 71);
             this.XAxisTextBox.Name = "XAxisTextBox";
             this.XAxisTextBox.Size = new System.Drawing.Size(50, 20);
-            this.XAxisTextBox.TabIndex = 10;
+            this.XAxisTextBox.TabIndex = 4;
             // 
             // StatusOfGeneration
             // 
@@ -154,7 +154,7 @@
             this.BrowseButton.Location = new System.Drawing.Point(278, 42);
             this.BrowseButton.Name = "BrowseButton";
             this.BrowseButton.Size = new System.Drawing.Size(75, 23);
-            this.BrowseButton.TabIndex = 12;
+            this.BrowseButton.TabIndex = 3;
             this.BrowseButton.Text = "Browse";
             this.BrowseButton.UseVisualStyleBackColor = true;
             this.BrowseButton.Click += new System.EventHandler(this.BrowseButton_Click);
@@ -245,7 +245,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "UserOptionsForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Form1";
+            this.Text = "Random Map Generator";
             this.ResumeLayout(false);
             this.PerformLayout();
 

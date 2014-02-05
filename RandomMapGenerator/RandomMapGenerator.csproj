@@ -46,6 +46,7 @@
   <ItemGroup>
     <Compile Include="Constants\OutputType.cs" />
     <Compile Include="Constants\Sides.cs" />
+    <Compile Include="ProcessModel.cs" />
     <Compile Include="Tiles\WidePath\TopToBottom.cs" />
     <Compile Include="Tiles\WidePath\WidePathBase.cs" />
     <Compile Include="UserInput\InputValues.cs" />
@@ -55,7 +56,7 @@
     <Compile Include="UserOptionsForm.Designer.cs">
       <DependentUpon>UserOptionsForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="ProcessModel.cs" />
+    <Compile Include="RandomMapGenerator.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

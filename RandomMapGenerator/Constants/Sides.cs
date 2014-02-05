@@ -1,6 +1,6 @@
 ﻿namespace RandomMapGenerator.Constants
 {
-    public enum Sides
+    public enum Side
     {
         Top,
         Bottom,
